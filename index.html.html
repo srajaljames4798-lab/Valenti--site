@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just One Question 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #2c2c2c;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 25px 0;
+      color: #e63946;
+    }
+
+    button {
+      border: none;
+      padding: 12px 22px;
+      font-size: 16px;
+      border-radius: 30px;
+      margin: 10px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .yes {
+      background: #e63946;
+      color: white;
+      box-shadow: 0 5px 15px rgba(230,57,70,0.4);
+    }
+
+    .maybe {
+      background: #f1f1f1;
+      color: #333;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .message {
+      font-size: 18px;
+      margin-top: 20px;
+      display: none;
+      animation: fadeIn 1s ease;
+    }
+
+    .hearts {
+      font-size: 28px;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Hey Shubhangi 😊</h1>
+
+    <p>
+      I wanted to ask you something special…  
+      and I knew a normal message wouldn’t feel right.
+    </p>
+
+    <p>
+      You make things feel warmer, lighter, and happier —  
+      more than you probably realise.
+    </p>
+
+    <div class="question">
+      Will you be my Valentine? ❤️
+    </div>
+
+    <button class="yes" onclick="sayYes()">Yes 💖</button>
+    <button class="maybe" onclick="sayMaybe()">Let me think 🤍</button>
+
+    <div id="response" class="message"></div>
+
+    <!-- Lover - Taylor Swift -->
+    <audio id="loverSong">
+      <source src="lover.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <script>
+    function sayYes() {
+      const msg = document.getElementById("response");
+      const song = document.getElementById("loverSong");
+
+      msg.style.display = "block";
+      msg.innerHTML = `
+        <div class="hearts">💖💖💖</div>
+        <p>I was really hoping you’d say that, Shubhangi.</p>
+        <p>This just became my favourite Valentine’s Day 🌹</p>
+      `;
+
+      song.play();
+    }
+
+    function sayMaybe() {
+      const msg = document.getElementById("response");
+      msg.style.display = "block";
+      msg.innerHTML = `
+        <p>That’s completely okay 😊</p>
+        <p>Take your time — I’ll be smiling anyway.</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
